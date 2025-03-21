@@ -1,0 +1,28 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /opt/sms/Ai
+
+# hooks:
+hooks:
+  BeforeInstall:
+    - location: appspec_hooks.sh
+      timeout: 180
+      runas: root
+  AfterInstall:
+    - location: appspec_hooks.sh
+      timeout: 180
+      runas: root
+  ApplicationStop:
+    - location: appspec_hooks.sh
+      timeout: 180
+      runas: root
+  ApplicationStart:
+    - location: appspec_hooks.sh
+      timeout: 180
+      runas: root
+  ValidateService:
+    - location: appspec_hooks.sh
+      timeout: 180
+      runas: root
